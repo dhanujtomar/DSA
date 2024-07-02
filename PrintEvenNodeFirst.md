@@ -1,19 +1,19 @@
-Notes -----
+# Print Even Node First
 
-segregateEvenOdd(ListNode head) method:
+## segregateEvenOdd(ListNode head) method:
 
-    Initialize two heads one for even and another for odd linkedlists with null value
+Initialize two heads one for even and another for odd linkedlists with null value
 
     ListNode odd = null;
     ListNode even = null;
 
-    Similarly initialize two tails even and odd linkedlists with null value
-    -- this makes insertion at the end easy
+Similarly initialize two tails even and odd linkedlists with null value
+-- this makes insertion at the end easy
 
     ListNode oddTail = null;
     ListNode evenTail = null;
 
-    Now traverse the main linkedlist using a while loop
+Now traverse the main linkedlist using a while loop
 
     while(temp != null){
 
@@ -38,3 +38,5 @@ segregateEvenOdd(ListNode head) method:
     evenTail.next = odd;
 
     return even;    // this will return a linkedlist with even numbers in the begining and odd numbers at the end
+
+// ctrl+shift+v to preview markdown
