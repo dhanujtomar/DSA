@@ -1,4 +1,5 @@
 package Stack;
+
 import java.util.Scanner;
 import java.util.Stack;
 
@@ -17,14 +18,14 @@ class Next_Greater_Element {
 
         // Iterating the array from right to left
         for (int i = n - 1; i >= 0; i--) {
-            
+
             // Pop till the top element is smaller than current
-            while (!stack.isEmpty() && stack.peek() < arr[i]) {
+            while (!stack.isEmpty() && stack.peek() > arr[i]) {
                 stack.pop();
             }
 
             nge[i] = stack.isEmpty() ? -1 : stack.peek();
-            
+
             // Push the current element to stack
             stack.push(arr[i]);
         }
