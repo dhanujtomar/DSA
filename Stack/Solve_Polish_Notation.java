@@ -47,6 +47,7 @@ class Solve_Polish_Notation {
                 ans = result;
             }
             System.out.println(ans);
+            
             tc--;
         }
     }
