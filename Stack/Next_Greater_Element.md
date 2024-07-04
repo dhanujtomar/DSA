@@ -13,25 +13,22 @@
 
 # Approach
 1. Initialize:
-- Push -1 onto the stack to serve as a sentinel value.
-- Create an array NGE (Next Greater Element) to store the result.
+    - Push -1 onto the stack to serve as a sentinel value.
+    - Create an array NGE (Next Greater Element) to store the result.
 
 2. Traverse the Array:
-- Iterate through the array from the end to the beginning.
+    - Iterate through the array from the end to the beginning.
 
 3. Process Elements Using a Stack:
-- For each element in the array, use a while loop to check the stack.
-- Pop elements from the stack until the top of the stack is greater than the current array element or the top of the stack is -1.
+    - For each element in the array, use a while loop to check the stack.
+    - Pop elements from the stack until the top of the stack is greater than the current array element or the top of the stack is -1.
 
 4. Assign the Next Greater Element:
-
-- After the loop, the top of the stack will contain the next greater element for the current index. Assign this value to NGE.
+    - After the loop, the top of the stack will contain the next greater element for the current index. Assign this value to NGE.
 
 5. Push Current Element to Stack:
+    - Push the current array element onto the stack.
 
-- Push the current array element onto the stack.
-
-- [x] Write the press release
 
 Code:
 
