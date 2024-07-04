@@ -12,34 +12,49 @@
     for 9 NGE is -1 as there is no larger number than 9
 
 # Approach
+1. Initialize:
+- Push -1 onto the stack to serve as a sentinel value.
+- Create an array NGE (Next Greater Element) to store the result.
 
-push -1 to the stack
-Traverse through the array from the end
-Use a while loop to iterate throught the stack and pop elements from the stack until the top of the stack is greater than the array element or stack top == -1. ie:
+2. Traverse the Array:
+- Iterate through the array from the end to the beginning.
 
-    while(stack.peek()!=-1 & stack.peek()<arr[i])
+3. Process Elements Using a Stack:
+- For each element in the array, use a while loop to check the stack.
+- Pop elements from the stack until the top of the stack is greater than the current array element or the top of the stack is -1.
 
-Assign value to NGE = value at top of stack as it contains the next greatest number for the given index
+4. Assign the Next Greater Element:
 
-    NGE[i] = stack.peek()
+- After the loop, the top of the stack will contain the next greater element for the current index. Assign this value to NGE.
 
-Append array element to the stack
+5. Push Current Element to Stack:
 
-    stack.push(arr[i])
+- Push the current array element onto the stack.
+
+- [x] Write the press release
 
 Code:
 
-    // initialize stack and the necessary elements
-    // initialize NGE
-    for(int i=n-1; i>=0; i--){
-        while(stack.peek()!=-1 & stack.peek()>arr[i]){
+    // Initialize the stack and necessary elements
+    // in java use deque to implement stack as Stack class is a legacy class
+    Deque<Integer> stack = new ArrayDeque<>();
+    stack.push(-1);
+    int[] NGE = new int[n];
+
+    // Traverse the array from the end to the beginning
+    for (int i = n - 1; i >= 0; i--) {
+        // Pop elements from the stack until the top is greater than the current element or the top is -1
+        while (stack.peek() != -1 && stack.peek() <= arr[i]) {
             stack.pop();
         }
 
-            NGE[i] = stack.peek()
+        // Assign the next greater element
+        NGE[i] = stack.peek();
 
-            stack.push(arr[i])
+        // Push the current array element onto the stack
+        stack.push(arr[i]);
     }
+
 
 > [!Note]
 > To implement the program for NEXT SMALLEST ELEMENT just change the < operator to > in the while loop
