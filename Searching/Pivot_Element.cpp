@@ -19,7 +19,7 @@ int pivot(vector<int> &arr, int n)
         }
         mid = s + (e - s) / 2;
     }
-    return s;   // s return krdo ya e return krdo ek hi baat hai // loop e=s pe hi khatam hoga
+    return s; // s return krdo ya e return krdo ek hi baat hai // loop e=s pe hi khatam hoga
 }
 
 int main()
