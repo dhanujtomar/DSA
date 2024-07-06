@@ -12,42 +12,40 @@ class ListNode {
 
 public class PrintEvenNodeFirst {
     static ListNode segregateEvenOdd(ListNode head) {
-        if(head.next == null){
+        if (head.next == null) {
             return head;
         }
         // Write your code here
         ListNode temp = head;
-        
-        //initializing odd and even lists
+
+        // initializing odd and even lists
         ListNode odd = null;
         ListNode even = null;
-        
-        
-        //initializing odd and even lists Tails
+
+        // initializing odd and even lists Tails
         ListNode oddTail = null;
         ListNode evenTail = null;
-        
 
-        while(temp != null){
-            //Odd List
+        while (temp != null) {
+            // Odd List
             ListNode newNode = new ListNode(temp.val);
-            
-            if(temp.val % 2 == 0){
-                if(even == null){
+
+            if (temp.val % 2 == 0) {
+                if (even == null) {
                     even = newNode;
-                }else{
+                } else {
                     evenTail.next = newNode;
                 }
                 evenTail = newNode;
-            }else{
-                if(odd == null){
+            } else {
+                if (odd == null) {
                     odd = newNode;
-                }else{
+                } else {
                     oddTail.next = newNode;
                 }
                 oddTail = newNode;
             }
-            
+
             temp = temp.next;
         }
         evenTail.next = odd;

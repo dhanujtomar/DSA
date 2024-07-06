@@ -4,5 +4,5 @@
 
 
 
-<img src="git_images/Histogram-area.png">
+<img src="../git_images/Histogram-area.png">
 
