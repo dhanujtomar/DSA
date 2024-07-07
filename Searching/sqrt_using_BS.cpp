@@ -11,15 +11,16 @@ int BSsqrt(int num)
 
     while (s <= e)
     {
-        if (mid * mid == num)
+        long long int square = (long long int)mid*(long long int)mid;
+        if (square == num)
         {
             return mid;
         }
-        if (mid * mid > num)
+        if (square > num)
         {
             e = mid - 1;
         }
-        else if (mid * mid < num)
+        else if (square < num)
         {
             ans = mid;
             s = mid + 1;
