@@ -3,3 +3,4 @@ prac
 *.exe
 
 /.vscode
+.vscode/settings.json
