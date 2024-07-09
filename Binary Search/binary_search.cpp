@@ -87,14 +87,14 @@ int upperBound(int arr[], int e, int key)
 
 int main()
 {
-    int arr[] = {1, 2, 2, 2, 2, 2, 3, 4, 4, 4, 4, 4, 4, 6, 6, 6, 6, 6, 6, 6, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 9};
-    int num = 8;
-    int e = sizeof(arr) / sizeof(arr[0], num);
+    int arr[] = {2, 4, 6, 8, 10, 12, 14, 16, 18, 19};
+    int num = 19;
+    int e = sizeof(arr) / sizeof(arr[0]);
 
-    cout << binarySearch(arr, e, num) << endl;
+    cout << binarySearch(arr, e - 1, num) << endl;
 
-    cout << lowerBound(arr, e, num) << endl;
+    cout << lowerBound(arr, e - 1, num) << endl;
 
-    cout << upperBound(arr, e, num) << endl;
+    cout << upperBound(arr, e - 1, num) << endl;
     return 0;
 }
