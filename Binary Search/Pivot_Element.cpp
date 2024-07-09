@@ -24,7 +24,7 @@ int pivot(vector<int> &arr, int n)
 
 int main()
 {
-    vector<int> arr = {8, 10, 17, 1, 3};
+    vector<int> arr = {1, 2, 3, 4, 5, 6};
     int n = arr.size();
 
     cout << pivot(arr, n);
