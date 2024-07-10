@@ -1,8 +1,9 @@
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
-int binarySearch(int arr[], int e, int num)
+int binarySearch(vector<int>&arr, int e, int num)
 {
     int s = 0;
     // int mid = (s + e) / 2;
@@ -29,7 +30,7 @@ int binarySearch(int arr[], int e, int num)
     return -1;
 }
 
-int lowerBound(int arr[], int e, int key)
+int lowerBound(vector<int>&arr, int e, int key)
 {
     int s = 0;
     int mid = s + (e - s) / 2;
@@ -57,7 +58,7 @@ int lowerBound(int arr[], int e, int key)
     return ans;
 }
 
-int upperBound(int arr[], int e, int key)
+int upperBound(vector<int>&arr, int e, int key)
 {
     int s = 0;
     int mid = s + (e - s) / 2;
@@ -87,9 +88,9 @@ int upperBound(int arr[], int e, int key)
 
 int main()
 {
-    int arr[] = {2, 4, 6, 8, 10, 12, 14, 16, 18, 19};
+    // int arr[] = {2, 4, 6, 8, 10, 12, 14, 16, 18, 19};
+    vector<int> arr = {5,7,7,8,8,10};
     int num = 19;
-    int e = sizeof(arr) / sizeof(arr[0]);
 
     cout << binarySearch(arr, e - 1, num) << endl;
 
