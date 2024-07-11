@@ -1,23 +1,22 @@
 #include <iostream>
 #include <vector>
-#include <algorithm>
 
 using namespace std;
 
-void solve(string &s, int index, vector<string> &ans)
+void solve(string &s, int index, string output, vector<string> &ans)
 {
-    if (index >= s.length())
+    if (index >= s.size())
     {
-
         ans.push_back(s);
-
         return;
     }
-    for (int i = index; i < s.length(); i++)
+
+    for (int i = index; i < s.size(); i++)
     {
-        swap(s[index], s[i]);
-        solve(s, index + 1, ans);
-        swap(s[index], s[i]);
+        swap(s[i], s[index]);
+
+        solve(s, index + 1, output, ans);
+        swap(s[i], s[index]);
     }
 }
 
@@ -25,18 +24,15 @@ int main()
 {
     string s = "abc";
     vector<string> ans;
-    string out;
+    string output;
     int index = 0;
 
-    solve(s, index, ans);
+    solve(s, index, output, ans);
 
     for (string x : ans)
     {
-        for (char c : x)
-        {
-            cout << c << " ";
-        }
-        cout << endl;
+        cout << x << endl;
     }
+
     return 0;
 }
