@@ -2,9 +2,10 @@
 
 using namespace std;
 
+template <typename T>
 class Stack
 {
-    int *arr;
+    T *arr;
     int top;
     int size;
 
@@ -12,11 +13,11 @@ public:
     Stack(int size)
     {
         this->size = size;
-        arr = new int[size];
+        arr = new T[size];
         top = -1;
     }
 
-    void push_back(int data)
+    void push_back(T data)
     {
         if (isFull())
         {
@@ -32,17 +33,17 @@ public:
         if (isEmpty())
         {
             cout << "UnderFlow" << endl;
-            return;
+            return (T)-1;
         }
         top--;
     }
 
-    int peek()
+    T peek()
     {
         if (isEmpty())
         {
             cout << "UnderFlow" << endl;
-            return -1;
+            return nullptr;
         }
         return arr[top];
     }
@@ -60,11 +61,11 @@ public:
 
 int main()
 {
-    Stack s(3);
-    s.push_back(1);
-    s.push_back(2);
-    s.push_back(3);
-    s.push_back(4);
+    Stack<string> s(3);
+    s.push_back("1");
+    s.push_back("2");
+    s.push_back("3");
+    s.push_back("4");
     cout << s.peek();
     s.pop();
     cout << s.peek();
