@@ -17,19 +17,26 @@ public:
 void levelOrderTraversal(Node *root);
 void buildFromLevelOrder(Node *&root);
 
-bool balanced(Node *root)
+pair<bool, int> balanced(Node *root)
 {
     if (root == nullptr)
-        return true;
+        return {true, 0};
 
-    bool left = balanced(root->left);
-    bool right = balanced(root->right);
+    pair<bool, int> left = balanced(root->left);
+    pair<bool, int> right = balanced(root->right);
 
-    bool diff = 
-    
+    bool diff = abs(left.second - right.second) <= 1;
+
+    int height = max(left.second, right.second) + 1;
+    if (left.first && right.second && diff)
+    {
+        return {true, height};
+    }
+    else
+    {
+        return {false, height};
     }
 }
-
 
 int main()
 {
@@ -39,8 +46,6 @@ int main()
     // 1 3 7 -1 -1 11 -1 -1 5 17 -1 -1 -1
     levelOrderTraversal(root);
     // 1 3 5 7 11 17 -1 -1 -1 -1 -1 -1 -1
-
-    cout << diameter(root).first << endl;
 
     return 0;
 }

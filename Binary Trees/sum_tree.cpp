@@ -1,6 +1,5 @@
 #include <iostream>
 #include <queue>
-
 using namespace std;
 
 class Node
@@ -15,22 +14,50 @@ public:
     Node(int data) : data(data), left(nullptr), right(nullptr) {}
 };
 
-Node *createTree(Node *root)
+void levelOrderTraversal(Node *root);
+void buildFromLevelOrder(Node *&root);
+
+pair<bool, int> fastSum(Node *root)
 {
-    cout << "enter data to node: " << endl;
-    int data;
-    cin >> data;
-    root = new Node(data);
+    if (root == nullptr)
+    {
+        return {true, 0};
+    }
+    if (root->left == nullptr && root->right == nullptr)
+    {
+        return {true, root->data};
+    }
+    pair<bool, int> leftAns = fastSum(root->left);
+    pair<bool, int> rightAns = fastSum(root->right);
 
-    if (data == -1)
-        return NULL;
+    bool left = leftAns.first;
+    bool right = rightAns.first;
 
-    cout << "enter data to enter in left of " << data << "Node: " << endl;
-    root->left = createTree(root->left);
-    cout << "enter data to enter in right of " << data << "Node: " << endl;
-    root->right = createTree(root->left);
+    bool cond = root->data == leftAns.second + rightAns.second;
 
-    return root;
+    if (left && right && cond)
+    {
+        return {true, 2 * root->data};
+    }
+    return {false, 2 * root->data};
+}
+
+int main()
+{
+    Node *root;
+
+    // Build
+    buildFromLevelOrder(root);
+    // 1 3 5 7 11 17 -1 -1 -1 -1 -1 -1 -1 -- sum_tree false
+    // 6 3 3 1 2 3 -1 -1 -1 -1 -1 -1 -1 -- sum_tree true
+    // 3 1 2  -- true
+
+    // Traverse
+    levelOrderTraversal(root);
+
+    cout << fastSum(root).first;
+
+    return 0;
 }
 
 void levelOrderTraversal(Node *root)
@@ -50,7 +77,7 @@ void levelOrderTraversal(Node *root)
             cout << endl;
             if (!q.empty())
             {
-                // queue still has some child nodes
+                // queue still has some child ndoes
                 q.push(NULL);
             }
         }
@@ -68,36 +95,6 @@ void levelOrderTraversal(Node *root)
             }
         }
     }
-}
-
-void inOrder(Node *root)
-{
-    if (root == nullptr)
-        return;
-
-    inOrder(root->left);
-    cout << root->data << " ";
-    inOrder(root->right);
-}
-
-void preOrder(Node *root)
-{
-    if (root == nullptr)
-        return;
-
-    cout << root->data << " ";
-    preOrder(root->left);
-    preOrder(root->right);
-}
-
-void postOrder(Node *root)
-{
-    if (root == nullptr)
-        return;
-
-    postOrder(root->left);
-    postOrder(root->right);
-    cout << root->data << " ";
 }
 
 void buildFromLevelOrder(Node *&root)
@@ -135,21 +132,4 @@ void buildFromLevelOrder(Node *&root)
             q.push(temp->right);
         }
     }
-}
-
-int main()
-{
-    Node *root;
-    // root = createTree(root);
-    buildFromLevelOrder(root);
-    // 1 3 7 -1 -1 11 -1 -1 5 17 -1 -1 -1
-    levelOrderTraversal(root);
-    // 1 3 5 7 11 17 -1 -1 -1 -1 -1 -1 -1
-    // inOrder(root);
-    // cout << endl;
-    // preOrder(root);
-    // cout << endl;
-    // postOrder(root);
-    // cout << endl;
-    return 0;
 }
