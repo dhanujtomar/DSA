@@ -11,10 +11,18 @@
    3. Pivot_Element
    4. Sqrt_using_BS
    5. Book_Allocation
+7. Linked List
+8. Binary Tree
+   - Important (Morris Traversal, Boundary Traversal, Vertical Order Traversal)
+9. Binary Search Tree
+
+# Important Questions
+
+- Morris Traversal (BT, BST)
+- Rat in a Maze problem
 
 <!--details>        ----  Create a markdown using this template
   <summary>Click to expand</summary>
 
   Your hidden content goes here.
 </details-->
-
