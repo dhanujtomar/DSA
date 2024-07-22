@@ -22,10 +22,12 @@
 7. Linked List
    - Clone Linked List with Random Pointer
 8. Binary Tree
+   - Diameter of BT
    - Boundary Traversal
    - Morris Traversal - Advance and Very Important
    - Vertical Order Traversal - Advance Question
 9. Binary Search Tree
+   - Merge 2 Binary Search Trees
 
 # Important Questions
 
