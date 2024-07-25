@@ -68,7 +68,8 @@ public:
             {
                 swap(arr[i], arr[rightIndex]);
                 i = rightIndex;
-            }else
+            }
+            else
                 return;
         }
     }
