@@ -9,14 +9,10 @@ void heapifyInt(int *arr, int n, int i)
     int right = 2 * i + 1;
 
     if (left <= n && arr[largest] < arr[left])
-    {
         largest = left;
-    }
     if (right <= n && arr[largest] < arr[right])
-    {
         largest = right;
-    }
-
+    
     if (largest != i)
     {
         swap(arr[i], arr[largest]);
@@ -31,7 +27,7 @@ void heapify(int *arr, int n)
 
     // all root nodes will end at n/2 string from i=1
 
-    for (int i = n / 2; i > 0; i--)
+    for (int i = n / 2 - 1; i > 0; i--)
     {
         heapifyInt(arr, n, i);
     }
