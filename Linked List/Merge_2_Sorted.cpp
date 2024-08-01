@@ -15,11 +15,81 @@ void insertAtHead(Node *&head, int val);
 void insertAtTail(Node *&tail, int val);
 void print(Node *head);
 
+// My Approach
+Node *merge2Sorted(Node *head1, Node *head2)
+{
+    Node *curr1 = head1;
+    Node *curr2 = head2;
+
+    Node *head = nullptr;
+    Node *tail = nullptr;
+
+    while (curr1 != nullptr && curr2 != nullptr)
+    {
+        if (curr1->data < curr2->data)
+        {
+            if (head == nullptr)
+            {
+                head = curr1;
+                tail = head;
+                curr1 = curr1->next;
+                tail->next = nullptr;
+            }
+            else
+            {
+                tail->next = curr1;
+                curr1 = curr1->next;
+                tail = tail->next;
+                tail->next = nullptr;
+            }
+        }
+        else
+        {
+            if (head == nullptr)
+            {
+                head = curr2;
+                tail = head;
+                curr2 = curr2->next;
+                tail->next = nullptr;
+            }
+            else
+            {
+                tail->next = curr2;
+                curr2 = curr2->next;
+                tail = tail->next;
+                tail->next = nullptr;
+            }
+        }
+        if (curr1 != nullptr)
+            tail->next = curr1;
+
+        if (curr2 != nullptr)
+            tail->next = curr2;
+    }
+    return head;
+}
+
+// Babbar Approach - flawed
 Node *merge(Node *head1, Node *head2)
 {
-    Node *first = head1;
-    Node *second = head1->next;
-    Node *temp = head2;
+    Node *first = nullptr;
+    Node *second = nullptr;
+
+    Node *temp = nullptr;
+    if (head1->data < head2->data)
+    {
+        first = head1;
+        second = first->next;
+
+        temp = head2;
+    }
+    else
+    {
+        first = head2;
+        second = first->next;
+
+        temp = head1;
+    }
 
     while (second != nullptr)
     {
@@ -61,7 +131,7 @@ int main()
     print(head1);
     print(head2);
 
-    Node *head3 = merge(head1, head2);
+    Node *head3 = merge2Sorted(head1, head2);
 
     print(head3);
 
