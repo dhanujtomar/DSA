@@ -5,7 +5,7 @@ using namespace std;
 
 int main()
 {
-    vector<int> nums = {1, 2, 3, 4, 5, 6, 1, 7, 8};
+    vector<int> nums = {3, 3, 3, 3, 3};
     int n = nums.size();
 
     int ans = 0;
