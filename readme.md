@@ -2,6 +2,8 @@
 
 This repository contains a collection of data structures and algorithms organized by categories and specific problems. It aims to provide solutions and insights into a wide range of topics, from basic to advanced levels.
 
+<a href="https://docs.google.com/spreadsheets/d/1HBIi-CXJ81h29jABD4nxjuTuohppMX3bxhoOIP5uvnQ/edit?usp=sharing">View Progress</a>
+
 ## Table of Contents
 
 1. [LinkedList](#1-linkedlist)
