@@ -1,1 +1,1 @@
-hash - oldVal
+if (pat[j] != txt[i])

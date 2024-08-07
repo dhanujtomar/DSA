@@ -32,12 +32,14 @@ This repository contains a collection of data structures and algorithms organize
    - [Boundary Traversal](#boundary-traversal)
    - [Morris Traversal - Advanced and Very Important](#morris-traversal---advanced-and-very-important)
    - [Vertical Order Traversal - Advanced Question](#vertical-order-traversal---advanced-question)
+   - [Sum Tree]()
 9. [Binary Search Tree](#9-binary-search-tree)
    - [Merge 2 Binary Search Trees](#merge-2-binary-search-trees)
 10. [Heaps](#10-heaps)
     - [K<sup>th</sup> largest sum in subarray](#kth-largest-sum-in-subarray)
     - [Merge K sorted arrays](#merge-k-sorted-arrays)
     - [Merge K sorted Linked Lists](#merge-k-sorted-linked-lists)
+11. [Tries](#11-tries)
 
 ## Important Questions
 
