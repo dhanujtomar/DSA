@@ -7,9 +7,10 @@ using namespace std;
 template <typename T>
 class Graph
 {
-    map<T, vector<T>> adj;
+    vector<vector<T>> adj;
 
 public:
+    Graph(int n) : adj(n + 1) {}
     void addEdge(T u, T v, bool directed)
     {
         // directed -> 0    -   undirected
@@ -23,13 +24,64 @@ public:
             adj[v].push_back(u);
     }
 
+    vector<int> bfs()
+    {
+        map<int, bool> visited;
+        queue<int> q;
+        q.push(0);
+        visited[0] = true;
+
+        vector<int> ans;
+
+        while (!q.empty())
+        {
+            int frontNode = q.front();
+            q.pop();
+
+            ans.push_back(frontNode);
+
+            for (int node : adj[frontNode])
+            {
+                if (!visited[node])
+                {
+                    q.push(node);
+                    visited[node] = true;
+                }
+            }
+        }
+
+        return ans;
+    }
+
+    void dfsUtil(map<int, bool> &visited, vector<int> &ans, int element)
+    {
+        visited[element] = true;
+
+        ans.push_back(element);
+
+        for (int node : adj[element])
+        {
+            if (!visited[node])
+                dfsUtil(visited, ans, node);
+        }
+    }
+
+    vector<int> dfs()
+    {
+        map<int, bool> visited;
+        vector<int> ans;
+
+        dfsUtil(visited, ans, 0);
+        return ans;
+    }
+
     void printAdjList()
     {
-        for (auto x : adj)
+        for (int i = 0; i < adj.size(); i++)
         {
-            cout << x.first << " -> ";
-            for (auto y : x.second)
-                cout << y << " ";
+            cout << i << "->";
+            for (int x : adj[i])
+                cout << x << " ";
             cout << endl;
         }
     }
@@ -44,7 +96,7 @@ int main()
     cout << "Enter number of edges: ";
     cin >> m;
 
-    Graph<int> g;
+    Graph<int> g(n);
 
     // Create Graph
     for (int i = 0; i < m; i++)
