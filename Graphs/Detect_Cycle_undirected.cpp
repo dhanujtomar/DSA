@@ -40,9 +40,8 @@ bool checkCycleBFS(unordered_map<int, bool> &visited, vector<list<int>> &adjList
         for (auto neighbour : adjList[frontNode])
         {
             if (visited[neighbour] == true && neighbour != parent[frontNode])
-            {
                 return true;
-            }
+            
             else if (!visited[neighbour])
             {
                 visited[neighbour] = true;
