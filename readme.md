@@ -40,6 +40,16 @@ This repository contains a collection of data structures and algorithms organize
     - [Merge K sorted arrays](#merge-k-sorted-arrays)
     - [Merge K sorted Linked Lists](#merge-k-sorted-linked-lists)
 11. [Tries](#11-tries)
+12. [Graphs](#12-Graphs)
+    - [DFS/BFS Traversal of Graphs]()
+    - [Detect Cycle in Directed Graphs]()
+    - [Detect Cycle in Undirected Graphs]()
+    - [Topological Sort using DFS]()
+    - [Topological Sort using BFS - Kahn's Algorithm]()
+    - [Shortest Path in Undirected Graph]()
+    - [Shortest Path in Directed Graph (DAG) - using Topological Sort]()
+    - [Dijkstra Algorithm for Shortest Path]()
+    - [Prim's Algorithm for Minimum Spanning Tree (MST)]()
 
 ## Important Questions
 

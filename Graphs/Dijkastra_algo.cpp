@@ -46,7 +46,6 @@ vector<int> dijkstra_using_min_heap_pq(vector<vector<int>> &vec, int vertices, i
         {
             if (nodeDist + neighbour.second < dist[neighbour.first])
             {
-
                 dist[neighbour.first] = nodeDist + neighbour.second;
                 pq.push({dist[neighbour.first], neighbour.first});
             }
