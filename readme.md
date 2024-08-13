@@ -7,6 +7,8 @@ This repository contains a collection of data structures and algorithms organize
 ## Table of Contents
 
 1. [LinkedList](#1-linkedlist)
+   - Reverse Linked List using recursion and iteration
+   - Reverse K groups in a Linked List
 2. [Stack](#2-stack)
    - [Rat in a Maze problem](#rat-in-a-maze-problem)
    - [Design Special Stack](#design-special-stack)
@@ -32,14 +34,15 @@ This repository contains a collection of data structures and algorithms organize
    - [Boundary Traversal](#boundary-traversal)
    - [Morris Traversal - Advanced and Very Important](#morris-traversal---advanced-and-very-important)
    - [Vertical Order Traversal - Advanced Question](#vertical-order-traversal---advanced-question)
-   - [Sum Tree]()
+   - Sum Tree
 9. [Binary Search Tree](#9-binary-search-tree)
    - [Merge 2 Binary Search Trees](#merge-2-binary-search-trees)
 10. [Heaps](#10-heaps)
-    - [K<sup>th</sup> largest sum in subarray](#kth-largest-sum-in-subarray)
-    - [Merge K sorted arrays](#merge-k-sorted-arrays)
-    - [Merge K sorted Linked Lists](#merge-k-sorted-linked-lists)
+    - K<sup>th</sup> largest sum in subarray
+    - Merge K sorted arrays
+    - Merge K sorted Linked Lists
 11. [Tries](#11-tries)
+    - Search Bar
 12. [Graphs](#12-Graphs)
     - [DFS/BFS Traversal of Graphs]()
     - [Detect Cycle in Directed Graphs]()

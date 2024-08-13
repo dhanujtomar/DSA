@@ -74,14 +74,14 @@ void Graph::getShortestPathUtil(int src)
     {
         int top = s.top();
         s.pop();
-        if (dist[top] != INT_MAX)
+        if (dist[top] == INT_MAX)
+            continue;
+
+        for (auto neighbour : adjList[top])
         {
-            for (auto neighbour : adjList[top])
+            if (dist[neighbour.first] > dist[top] + neighbour.second)
             {
-                if (dist[neighbour.first] > dist[top] + neighbour.second)
-                {
-                    dist[neighbour.first] = dist[top] + neighbour.second;
-                }
+                dist[neighbour.first] = dist[top] + neighbour.second;
             }
         }
     }
