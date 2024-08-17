@@ -53,6 +53,7 @@ This repository contains a collection of data structures and algorithms organize
     - [Shortest Path in Directed Graph (DAG) - using Topological Sort]()
     - [Dijkstra Algorithm for Shortest Path]()
     - [Prim's Algorithm for Minimum Spanning Tree (MST)]()
+    - [Kruskal's Algorithm]()
 
 ## Important Questions
 
