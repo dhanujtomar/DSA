@@ -1,11 +1,16 @@
-prac
+.gitignore
 
+// Remove All .exe files
 *.exe
 
-".vscode"
+// remove Practice Folder
+prac
 
+
+".vscode"
 .vscode
 .vscode/settings.json
+
 ./OOPS
 "./Binary Tree/prac.cpp"
 
